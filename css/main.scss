@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+header{
+    height:5%;
+    background-color: rgb(94, 36, 255);
+    position: relative;
+    border-bottom: 0.3em solid black;
+}
+
+footer{
+    height: 5%;
+    background-color: black;
+}
+
+header h4{
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 25px;
+}
+
+.flexbox {
+    height: 90%;
+}
+
+.flexbox > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    background-color:rgb(255, 187, 0);
+}
+
+.challenges {
+    border-radius: 4px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    background-color: black;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+}
+
+// Day 1 ---------------------------------------------------------------
+
+#first {
+    position: relative;
+    background-color: white;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    // transform: rotate, matrix, scale, skew
+}
+
+// Variables Menu Icon
+$icon-line-height: 8px;
+$icon-line-space: 14px;
+$icon-line-OffsetY: $icon-line-height + $icon-line-space;
+$menu-icon-height: (3*$icon-line-height) + (2*$icon-line-space);
+$cubic-bezier-in: cubic-bezier(0.30,1,0.70,1);
+$cubic-bezier-out: cubic-bezier(1,0.70,1,0.30);
+
+.menu-icon{
+    width: 80px;
+    height: $menu-icon-height;
+    cursor: pointer;
+    z-index: 50;
+   
+    .line-1,
+    .line-2,
+    .line-3 {
+        height: $icon-line-height;
+        width: 100%;
+        background-color: rgb(41, 45, 49);
+        border-radius: 3px;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+        transition: background-color .2s ease-in-out;
+    }
+
+    .line-1 {
+        //animation is shorthand property of: animation - name, duration, timing, delay, iteration count, direction, fill-mode, play-state;
+        animation: animate-line-1-rev .7s ease-in-out; 
+    }
+
+    .line-2 {
+        margin: $icon-line-space 0;
+        animation: animate-line-2-rev .7s ease-in-out;
+    }
+
+    .line-3{
+        animation: animate-line-3-rev .7s ease-in-out;
+    }
+
+
+
+    //hover state for menu icon;
+    &:hover{
+        .line-1,
+        .line-2,
+        .line-3 {
+            background-color: rgb(177, 43, 255);
+        }
+    }
+
+    //active state for menu icon;
+    &.active {
+        .line-1,
+        .line-2,
+        .line-3 {
+            background-color: blue;
+        }
+
+        .line-1{
+            animation: animate-line-1 .7s $cubic-bezier-in forwards;
+        }
+        .line-2{
+            animation: animate-line-2 .7s $cubic-bezier-in forwards;
+        }
+        .line-3{
+            animation: animate-line-3 .7s $cubic-bezier-in forwards;
+        }
+    } 
+}
+
+.no-animation {
+    animation: none !important;
+}
+
+@keyframes animate-line-1 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate3d(0, $icon-line-OffsetY, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate3d(0, $icon-line-OffsetY, 0) rotate(45deg);
+    }
+}
+
+@keyframes animate-line-2 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes animate-line-3 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0);
+    }
+
+    50% {
+        transform: translate3d(0, -$icon-line-OffsetY, 0) rotate(0);
+    }
+
+    100% {
+        transform: translate3d(0, -$icon-line-OffsetY, 0) rotate(135deg);
+    }
+}
+
+@keyframes animate-line-1-rev {
+    0% {
+        transform: translate3d(0, $icon-line-OffsetY, 0) rotate(45deg);
+    }
+
+    50% {
+        transform: translate3d(0, $icon-line-OffsetY, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes animate-line-2-rev {
+    0% {  
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animate-line-3-rev {
+    0% {
+        transform: translate3d(0, -$icon-line-OffsetY, 0) rotate(135deg);
+    }
+
+    50% {
+        transform: translate3d(0, -$icon-line-OffsetY, 0) rotate(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0);
+    }
+}
+
+
+
+// Day 2 ---------------------------------------------------------------
+
+
+#second {
+    position: relative;
+    background-color: rgb(103, 194, 255);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    // overflow: hidden;
+}
+
+.quote {
+    margin-top: 120px;
+    padding: 0 30px;
+    
+
+    &::before{
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: 7px;
+        color: rgba(255, 255, 255, 0.253);
+        font-family: Arial;
+        content: '„';
+        font-size: 250px;
+        line-height: 35px;
+    }
+
+    p {
+        font-size: 25px;
+        font-weight: 300;
+        color: white;
+    }
+
+    .author{
+        font-weight: lighter;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 100px;
+    }
+
+    .highlight {
+        display: inline-block;
+        position: relative;
+        padding: 0 10px 5px 10px;
+        margin-top: 5px;
+        background: #286F8A;
+        cursor: pointer;
+
+        &:hover .info,
+        &:focus .info{
+            visibility: visible;
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+    }
+    .info{
+        position: absolute;
+        bottom: 53px;
+        left: -85px;
+        display: block;
+        width: 300px;
+        background: #286F8A;
+        font-size: 18px;
+        visibility: hidden;
+        transition: all .5s ease-out;
+        transform: translate3d(0,-20px,0);
+        opacity: 0;
+
+        &:after{
+            position: absolute;
+            content: " ";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background-color: #286F8A;
+            transform: rotate(45deg);
+            bottom: -5px;
+            margin-left: -10px;
+            left: 50%;
+        }
+
+        .pronounce {
+            display: block;
+            background-color: #fff;
+            color: #286F8A;
+            padding: 10px 20px 10px 17px;
+            font-size: 16px;
+            line-height: 16px;
+
+            .fa{
+                position: relative;
+                margin-left: 10px;
+                top: 1px;
+                cursor: pointer;
+                transition: all .2s ease-out;
+
+                &:hover {
+                    transform: scale(1.15) translate3d(0,0,0);
+                    backface-visibility: none;
+                }
+            }
+        }
+
+        .text {
+            letter-spacing: .7px;
+            font-size: 18px;
+            font-weight: lighter;
+            line-height: 20px;
+            display: block;
+            padding: 15px 15px;
+        }
+
+
+    }
+}
+
+// Day 3 ----------------------------------------------------
+
+#third {
+    background-color: rgb(92, 98, 105);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    // remeber to enable 3D in parent container, & set the perspective;
+    transform: perspective(100px);
+    transform-style: preserve-3d;
+
+    .window {
+        position: absolute;
+        width: 135px;
+        height: 120px;
+        top: 130px;
+        left: 130px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);
+        overflow: hidden;
+
+        .titlebar {
+            width:100%;
+            height: 25px;
+            background-color: orange;
+            border-bottom: solid .5px rgba(133, 133, 133, 0.568);
+        }
+
+        .txtzone {
+            height: calc(100% - 25px);
+            background-color: white;
+            padding-top: 15px;
+            padding-left: 15px;
+
+            .line1 {
+                width: 90px;
+                height: 4px;
+                margin-bottom: 5px;
+                background-color: rgb(202, 206, 214);
+            }
+
+            .line2 {
+                width: 80px;
+                height: 4px;
+                margin-bottom: 5px;
+                background-color: rgb(202, 206, 214);
+            }
+
+            .line3 {
+                width: 100px;
+                height: 4px;
+                margin-bottom: 5px;
+                background-color: rgb(202, 206, 214);
+            }
+
+            .line4 {
+                width: 70px;
+                height: 4px;
+                margin-bottom: 5px;
+                background-color: rgb(202, 206, 214);
+            }
+
+            .line5 {
+                width: 50px;
+                height: 4px;
+                margin-bottom: 5px;
+                background-color: rgb(202, 206, 214);
+            }
+        }
+    }
+
+    #element1{
+        animation: ele1-animation 5s ease-in-out infinite both;
+    }
+    #element2{
+        animation: ele2-animation 5s ease-in-out infinite both;
+    }
+    #element3{
+        animation: ele3-animation 5s ease-in-out infinite both;
+    }
+
+    @keyframes ele1-animation {
+        0%, 100%{
+            transform: translate3d(0,0,0);
+        }
+
+        33.3% {
+            transform: translate3d(145px, 0 , -45px);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.555);
+        }
+
+        66.6% {
+            transform: translate3d(-145px, 0, -45px);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.555);
+        }
+    }
+
+    @keyframes ele2-animation {
+        0%, 100%{
+            transform: translate3d(145px,0,-45px);
+        }
+
+        33.3% {
+            transform: translate3d(-145px, 0 , -45px);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.555);
+        }
+
+        66.6% {
+            transform: translate3d(0, 0, 0);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.555);
+        }
+    }
+
+    @keyframes ele3-animation {
+        0%, 100%{
+            transform: translate3d(-145px,0,-45px);
+        }
+
+        33.3% {
+            transform: translate3d(0,0,0);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.555);
+        }
+
+        66.6% {
+            transform: translate3d(145px, 0, -45px);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.555);
+        }
+    }
+
+}
+
