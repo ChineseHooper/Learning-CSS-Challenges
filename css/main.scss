@@ -31,25 +31,29 @@ header h4{
 }
 
 .flexbox > div{
+    padding: 30px 0;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-content: space-evenly;
+    align-content: space-between;
     align-items: center;
     height: 100%;
     background-color:rgb(255, 187, 0);
+    overflow: scroll;
 }
 
 .challenges {
     border-radius: 4px;
     width: 400px;
     height: 400px;
+    margin-bottom: 30px;
     overflow: hidden;
     background-color: black;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
 }
 
-// Day 1 ---------------------------------------------------------------
+// 1 ---------------------------------------------------------------
 
 #first {
     position: relative;
@@ -220,7 +224,7 @@ $cubic-bezier-out: cubic-bezier(1,0.70,1,0.30);
 
 
 
-// Day 2 ---------------------------------------------------------------
+// 2 ---------------------------------------------------------------
 
 
 #second {
@@ -336,7 +340,7 @@ $cubic-bezier-out: cubic-bezier(1,0.70,1,0.30);
     }
 }
 
-// Day 3 ----------------------------------------------------
+// 3 ----------------------------------------------------
 
 #third {
     background-color: rgb(92, 98, 105);
@@ -471,3 +475,546 @@ $cubic-bezier-out: cubic-bezier(1,0.70,1,0.30);
 
 }
 
+
+// 4 ------------------------------------------------
+
+#fourth{
+    background-color: #1a1f25;
+}
+
+.board{
+    position: relative;
+    width: 320px;
+    height: 250px;
+    background-color: grey;
+    margin: 75px auto;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    .nav{
+        position: absolute;
+        width: 100%;
+        height: 35px;
+        background-color: rgb(44, 47, 56);  
+    }
+
+    .tab{
+        position: relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        z-index: 5;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        cursor: pointer;
+        line-height: 15px;
+        font-size: 14px;
+        transition: .5s ease-in-out;
+
+        .fa{
+            width: 15px;
+            height: 15px;
+            border: 2px solid grey;
+
+            &:hover{
+                border: 2px solid white;
+            }
+        }
+    }
+    // 获取指定的input类型
+    // + 此类别的相邻下一个元素
+    input[type="radio"]:checked + .tab{
+        background: #5DA2ED;
+    }
+
+    .content{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 35px;
+        background-color: white;
+
+        .box {
+            position: absolute;
+            opacity: 0;
+            transform: translateY(3px);
+            pointer-events: none;
+            padding: 25px;
+            transition: all .3s ease-in;
+
+            h1{
+                font-weight: 400;
+                font-size: 18px;
+                color: #415868;
+            }
+
+            p{
+                margin: 17px 0;
+
+                span{
+                    display: block;
+                    height: 4px;
+                    background: #E9E9E9;
+                    margin: 6px 0;
+                }
+
+            }
+        }
+    }
+}
+
+#tab-1:checked ~ .content #box-1,
+#tab-2:checked ~ .content #box-2,
+#tab-3:checked ~ .content #box-3,
+#tab-4:checked ~ .content #box-4 {
+	pointer-events: all;
+	opacity: 1;
+	transform: translateY(0);
+	transition: all .5s ease-out .4s;
+}
+
+
+
+// 5 ---------------------------------------------
+
+.day5_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(31, 37, 53);
+
+    .main-window{
+        position: absolute;
+        z-index: 2;
+        width: 70%;
+        height: 70%;
+        border-radius: 4px;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: grey;
+        transition: all 1s ease-in-out;
+        box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.276);
+
+        .main-window-header{
+            display: flex;
+            height: 60px;
+            padding: 0 15px;
+            background-color: rgb(90, 137, 255);
+            align-items: center;
+            justify-content: space-between;
+
+            & > div{
+                width: 32px;
+                height: 30px;
+                margin-left: 5px;
+                position: relative;
+
+                // 选择所有子集
+                &:hover > div{
+                    background-color: rgb(255, 255, 255);
+                }
+
+                .icon-cir{
+                    position: relative;
+                    z-index: 5;
+                    top:5px;
+                    left: 2px;
+                    float: right;
+                    width: 15px;
+                    height: 15px;
+                    background-color: rgb(189, 213, 255);
+                    border-radius: 10px;
+                    border: solid 3px rgb(90, 137, 255);
+
+                    
+                }
+
+                .icon-line{
+                    position: relative;
+                    width: 100%;
+                    height: 4px;
+                    margin-top: 10px;
+                    background-color: rgb(189, 213, 255);
+                    border-radius: 1px;
+                }
+            }
+
+            .main-window-header-title{
+                color: white;
+                margin-top: 5px;
+                font-weight: normal;
+            }
+
+            .main-window-header-btn{
+                margin-top: 5px;
+                margin-right: 5px;
+                width: 15px;
+                height: 15px;
+                border: solid 2px rgb(189, 213, 255);
+
+                &:hover{
+                    border: solid 2px rgb(255, 255, 255);
+                }
+            }
+            
+        }
+
+        .main-window-body{
+            background-color: white;
+            height: 100%;
+            display: flex;
+
+            .body-timeline{
+                height: 100%;
+                width: 40px;
+                border-right: solid 3px rgb(227, 231, 235);
+
+                .timeline-points{
+                    width: 12px;
+                    height: 12px;
+                    margin-top: 35px;
+                    margin-bottom: 65px;
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 10px;
+                    margin-left: 40px;
+                    transform: translate(-70%,0);
+                    border: solid 2px rgb(140, 172, 255);
+                    box-shadow: 0 0 0 3px white;
+                }
+            }
+
+            .body-event{
+                width: calc(100% - 40px);
+                margin-top: 5px;
+                padding: 0 10px;
+
+                & > div{
+                    margin-top: 15px;
+                }
+
+                & h5{
+                    font-weight: normal;
+                    color: #9db0bd;
+                }
+                
+                & h4{
+                    font-weight: normal;
+                    color: #415868;
+                }
+
+            }
+        }
+    }
+
+    .show-menu{
+        transform: translate(0%,-50%);
+    }
+
+    .slider{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 250px;
+        height: 250px;
+        background-color: rgb(104, 104, 222);
+        border-radius: 3px;
+        transition: all .5s ease-in-out;
+
+        ul{
+            list-style: none;
+            color: rgb(209, 222, 235);
+            li{
+                margin: 20px -20px;
+
+                &::before{
+                    content: "：)";
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .move-left{
+        box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.488);
+        transform: translate(-70%, -50%);
+    }
+}
+
+
+// Day 6 ---------------------------------------------
+
+#sixth {
+    position: relative;
+    background-color: white;
+
+    .center{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.follow_out{
+    height: 35px;
+    margin-left: 10px;
+    overflow: hidden;
+    transform: translate(0, 0);
+}
+
+.follow_inner{
+    animation: textRolling 8s ease-in-out infinite;
+    
+    p{
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+
+@keyframes textRolling {
+    0% , 20%{
+        transform: translateY(0)
+    }
+
+    20% , 40%{
+        transform: translateY(30px * -1.5)
+    }
+
+    40% , 60%{
+        transform: translateY(30px * -3)
+    }
+
+    60% , 80%{
+        transform: translateY(30px * -4.5)
+    }
+
+    100%{
+        transform: translateY(30px * -6)
+    }
+}
+
+
+// 7 --------------------------
+#seventh{
+    position: relative;
+}
+
+.btn-container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    // 此方法可以用lineheight与父级元素相等来垂直居中文字
+    // 方法二：可以用position和transform来处理
+    // 方法三：可以用padding处理
+
+    div{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        transition: .2s ease-in-out;
+    }
+
+    .front{
+        z-index: 99;
+        background-color: blue;
+        color: rgb(245, 175, 245);
+        top: 10px;
+        left: 10px;
+    }
+
+    .back{
+        z-index: 1;
+        background-color: rgb(245, 175, 245);
+        top: -10px;
+        left: -10px;
+    }
+
+    &:hover > .front{
+        background-color: rgb(245, 175, 245);
+        color: white;
+        top: -10px;
+        left: -10px;
+    }
+
+    &:hover > .back{
+        background-color: blue;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+//8 ----------------------------
+#eighth {
+    position: relative;
+    background-color: white;
+}
+
+$size: 120px;
+$colorN: rgba(0,0,0,.1);
+$colorF: rgba(46,204,113,0.8);
+
+.loader {
+    width: $size;
+    height: $size;
+    transform-style: preserve-3d;
+    transform: rotateX(-25deg) rotateY(45deg);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: rotateX(-25deg) rotateY(45deg) translateY(-15px);
+        
+        .bottom {
+            box-shadow: -22px -22px 30px 0 rgba(0,0,0,.4);
+        }
+        
+    }
+
+    .plane {
+        position: absolute;
+        width: $size;
+        height: $size;
+        top: 0;
+        left: 0;
+        background: $colorN;
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ($size/2);
+        background: $colorF;
+        box-shadow: -8px -8px 10px 0 rgba(0,0,0,.4);
+        transition: all .5s ease-in-out;
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ($size/2);
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $colorF;
+            transform-origin: 50% 100%;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ($size/2);
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $colorF;
+            transform-origin: 50% 100%;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+        
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ($size/2);
+        
+        &:before {
+            content: '';
+            display: block;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $colorF;
+            transform-origin: 50% 100%;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+        
+    }
+
+    .front {
+        transform: rotateY(0deg) translateZ($size/2);
+        
+        &:before {
+            content: '';
+            display: block;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $colorF;
+            transform-origin: 50% 100%;
+            animation: fill 4s ease-in-out infinite alternate;
+        }
+        
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ($size/2);
+        opacity: .5;
+    }
+    
+    .fill-top {
+        background: $colorF;
+        animation: 
+            fill-top 4s ease-in-out infinite alternate, 
+    }
+
+}
+
+@keyframes fill {
+    0%,25% {
+        transform: scaleY(0);
+    }
+    75%, 100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes color-bottom {
+    0% {
+        background: $colorN;
+    }
+    25%, 100% {
+        background: $colorF;
+    }
+}
+
+@keyframes color-top {
+    0%,25% {
+        background: $colorN;
+    }
+    75%, 100% {
+        background: $colorF;
+    }
+}
+
+@keyframes fill-top {
+    0%,25% {
+        transform: rotateX(90deg) translateZ($size / -2);
+    }
+    75%, 100% {
+        transform: rotateX(90deg) translateZ(($size/2)-1);
+    }
+}

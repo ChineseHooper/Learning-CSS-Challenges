@@ -14,7 +14,7 @@
     <body>
       <div class="flexbox">
         <div>
-          <!-- Day 1 -->
+          <!-- 1 -->
           <div id="first" class="challenges">
             <div class="center">
               <div class="menu-icon">
@@ -24,17 +24,22 @@
               </div>
             </div>
           </div>
-          <!-- Day 2 -->
+          <!-- 2 -->
           <div id="second" class="challenges">
             <div class="quote">
               <p>
                 I know quite certainly that I myself have no special talent;
                 Curiosity,
-                <span class="highlight">obsession
+                <span class="highlight"
+                  >obsession
                   <span class="info">
-                    <span class="pronounce">[əbˈseʃ(ə)n]<span class="fa voice"></span></span>
-                    <span class="text"><b>Obsession</b>,a persistent disturbing preoccupation
-                      with an often unreasonable idea or feeling.</span>
+                    <span class="pronounce"
+                      >[əbˈseʃ(ə)n]<span class="fa voice"></span
+                    ></span>
+                    <span class="text"
+                      ><b>Obsession</b>,a persistent disturbing preoccupation
+                      with an often unreasonable idea or feeling.</span
+                    >
                   </span>
                 </span>
                 and dogged endurance, combined with self-criticism have brought
@@ -43,7 +48,7 @@
               <p class="author">Albert Einstein</p>
             </div>
           </div>
-          <!-- Day 3 -->
+          <!-- 3 -->
           <div id="third" class="challenges">
             <div class="container">
               <div id="element1" class="window">
@@ -78,12 +83,198 @@
               </div>
             </div>
           </div>
+          <!-- 4 -->
+          <div id="fourth" class="challenges">
+            <div class="board">
+              <!--  -->
+              <div class="nav"></div>
 
-          <div id="fourth" class="challenges"></div>
-          <div id="fifth" class="challenges"></div>
-          <div id="sixth" class="challenges"></div>
-          <div id="seventh" class="challenges"></div>
-          <div id="eighth" class="challenges"></div>
+              <!-- 要注意在css中使用兄弟选择器，相邻选择器时html标签的层级关系 -->
+              <input type="radio" id="tab-1" name="rd" checked="checked" />
+              <label class="tab" for="tab-1"></label>
+
+              <input type="radio" id="tab-2" name="rd" />
+              <label class="tab" for="tab-2"></label>
+
+              <input type="radio" id="tab-3" name="rd" />
+              <label class="tab" for="tab-3"></label>
+
+              <input type="radio" id="tab-4" name="rd" />
+              <label class="tab" for="tab-4"></label>
+
+              <div class="content">
+                <div class="box" id="box-1">
+                  <h1>Dashboard</h1>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                </div>
+
+                <div class="box" id="box-2">
+                  <h1>Comments</h1>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                </div>
+
+                <div class="box" id="box-3">
+                  <h1>Notifications</h1>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                </div>
+
+                <div class="box" id="box-4">
+                  <h1>Settings</h1>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                  <p>
+                    <span style="width: 250px;"></span>
+                    <span style="width: 270px;"></span>
+                    <span style="width: 235px;"></span>
+                    <span style="width: 260px;"></span>
+                    <span style="width: 53px;"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!----------- 5 ---------->
+          <div id="fifth" class="challenges">
+            <div class="day5_container">
+              <div class="main-window">
+                <div class="main-window-header">
+                  <div>
+                    <div class="icon-cir"></div>
+                    <div class="icon-line"></div>
+                    <div class="icon-line"></div>
+                  </div>
+                  <h4 class="main-window-header-title">Notifications</h4>
+                  <div class="main-window-header-btn"></div>
+                </div>
+                <div class="main-window-body">
+                  <div class="body-timeline">
+                    <div class="timeline-points"></div>
+                    <div class="timeline-points"></div>
+                    <div class="timeline-points"></div>
+                  </div>
+                  <div class="body-event">
+                    <div>
+                      <h5>9:24AM</h5>
+                      <h4>
+                        <span style="font-weight: bold;">John Walker</span>
+                        posted a photo on your wall.
+                      </h4>
+                    </div>
+
+                    <div>
+                      <h5>9:24AM</h5>
+                      <h4>
+                        <span style="font-weight: bold;">John Walker</span>
+                        posted a photo on your wall.
+                      </h4>
+                    </div>
+
+                    <div>
+                      <h5>9:24AM</h5>
+                      <h4>
+                        <span style="font-weight: bold;">John Walker</span>
+                        posted a photo on your wall.
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slider">
+                <ul>
+                  <li>Dashboard</li>
+                  <li>Profile</li>
+                  <li>Notifications</li>
+                  <li>Messages</li>
+                  <li>Settings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!----------- 6 ---------->
+          <div id="sixth" class="challenges">
+            <div class="center">
+              <p class="pre">I am</p>
+              <div class="follow_out">
+                <div class="follow_inner">
+                  <p>Panther</p>
+                  <p>Iron man</p>
+                  <p>Spider man</p>
+                  <p>Witcher</p>
+                  <p>Panther</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!----------- 7 ---------->
+          <div id="seventh" class="challenges">
+            <div class="btn-container">
+              <div class="front">Hover me</div>
+              <div class="back"></div>
+            </div>
+          </div>
+
+          <!----------- 8 ---------->
+          <div id="eighth" class="challenges">
+            <div class="center">
+              <div class="loader" onclick="void(0);">
+                  <div class="plane bottom"></div>
+                  <div class="plane left"></div>
+                  <div class="plane right"></div>
+                  <div class="plane back"></div>
+                  <div class="plane front"></div>
+                  <div class="plane top"></div>
+                  <div class="plane fill-top"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </body>
